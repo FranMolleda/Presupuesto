@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import Error from "./Error";
 
-const Pregunta = ({ setPresupuesto, setRestante }) => {
+const Pregunta = ({ setPresupuesto, setRestante, setMostrarpregunta }) => {
   const [cantidad, setCantidad] = useState(0);
   const [error, setError] = useState(false);
   const handlePresupuesto = (e) => {
@@ -23,6 +23,7 @@ const Pregunta = ({ setPresupuesto, setRestante }) => {
     setError(false);
     setPresupuesto(cantidad);
     setRestante(cantidad);
+    setMostrarpregunta(false);
   };
 
   console.log(cantidad);
