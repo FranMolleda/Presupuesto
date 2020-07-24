@@ -6,7 +6,7 @@ const Pregunta = ({ setPresupuesto, setRestante, setMostrarpregunta }) => {
   const [error, setError] = useState(false);
   const handlePresupuesto = (e) => {
     //Le ponemos parseInt ya que los datos recogidos de un input son string, de esta manera los convertimos a numeros
-    setCantidad(parseInt(e.target.value));
+    setCantidad(parseInt(e.target.value, 10));
   };
 
   const agregarPresupuesto = (e) => {
