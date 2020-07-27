@@ -36,6 +36,9 @@ const Formulario = ({ setGasto, setCreargasto }) => {
     setNombre("");
     setCantidad(0);
   };
+  if (isNaN(cantidad)) {
+    setCantidad("");
+  }
   return (
     <form onSubmit={agregaGasto}>
       <h2>Agrega tus gastos</h2>
