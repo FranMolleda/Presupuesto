@@ -1,4 +1,6 @@
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+
 const Gasto = ({ gasto }) => {
   const { nombre, cantidad } = gasto;
   return (
@@ -11,6 +13,10 @@ const Gasto = ({ gasto }) => {
       </li>
     </Fragment>
   );
+};
+
+Gasto.propTypes = {
+  gasto: PropTypes.object.isRequired,
 };
 
 export default Gasto;

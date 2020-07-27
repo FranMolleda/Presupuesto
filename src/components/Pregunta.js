@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import PropTypes from "prop-types";
 import Error from "./Error";
 
 const Pregunta = ({ setPresupuesto, setRestante, setMostrarpregunta }) => {
@@ -14,7 +15,6 @@ const Pregunta = ({ setPresupuesto, setRestante, setMostrarpregunta }) => {
 
     //Validar
     if (cantidad <= 0 || isNaN(cantidad)) {
-      setCantidad(0);
       setError(true);
       return;
     }
@@ -26,7 +26,6 @@ const Pregunta = ({ setPresupuesto, setRestante, setMostrarpregunta }) => {
     setMostrarpregunta(false);
   };
 
-  console.log(cantidad);
   return (
     <Fragment>
       <h2>Indica tu presupuesto</h2>
@@ -46,6 +45,12 @@ const Pregunta = ({ setPresupuesto, setRestante, setMostrarpregunta }) => {
       </form>
     </Fragment>
   );
+};
+
+Pregunta.propTypes = {
+  setPresupuesto: PropTypes.func.isRequired,
+  setRestante: PropTypes.func.isRequired,
+  setMostrarpregunta: PropTypes.func.isRequired,
 };
 
 export default Pregunta;
