@@ -5,12 +5,12 @@ import Listado from "./components/Listado";
 import ControlPresupuesto from "./components/ControlPresupuesto";
 
 function App() {
-  const [presupuesto, setPresupuesto] = useState(0);
   const [restante, setRestante] = useState(0);
   const [mostrarpregunta, setMostrarpregunta] = useState(true);
-  const [gastos, setGastos] = useState([]);
   const [gasto, setGasto] = useState({});
   const [creargasto, setCreargasto] = useState(false);
+  const [presupuesto, setPresupuesto] = useState(0);
+  const [gastos, setGastos] = useState([]);
 
   //UseEfect que actualiza el restante
   useEffect(() => {
@@ -25,7 +25,7 @@ function App() {
 
     //Despues de que se ejecute lo ponemos en false otra vez
     setCreargasto(false);
-  }, [gasto, creargasto, gastos, restante]);
+  }, [gasto, creargasto, gastos, restante, presupuesto]);
 
   return (
     <Fragment>
